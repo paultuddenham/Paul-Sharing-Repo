@@ -1,99 +1,174 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0e0f13">
 <title>Our Trip Plan</title>
 <style>
+:root{--bg:#0e0f13;--card:#151822;--card2:#1b1f2a;--line:rgba(255,255,255,.09);--tx:#e6e8ec;--mut:#98a2b3;--fr:#7aa2ff;--uk:#5fd0a6;--ldn:#c093fc;--warm:#ff7a6b}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f1f5f9;color:#1f2937;line-height:1.55;font-size:16px}
-.wrap{max-width:600px;margin:0 auto;background:#fff;padding:16px}
-.hero{background:linear-gradient(125deg,#1e3a8a,#3b5bdb 55%,#b91c1c);border-radius:16px;padding:20px;color:#fff}
-.hero h1{font-size:23px}
-.hero .sub{margin-top:4px;color:#dbeafe;font-size:14px}
-.intro{margin:16px 2px}
-.heat{background:#fffbeb;border-left:4px solid #f59e0b;padding:10px 14px;border-radius:8px;margin:16px 2px}
-.band{background:#eff6ff;border-radius:12px;padding:12px 14px;margin:26px 2px 6px;border-left:5px solid #1e3a8a}
-.band h2{color:#1e3a8a;font-size:20px}
-.card{border:1px solid #e5e7eb;border-radius:14px;padding:16px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.card img{width:100%;border-radius:10px;display:block;margin:4px 0 10px;background:#eef2f7}
-.day{color:#1e3a8a;font-size:20px;margin:22px 2px 4px}
-h2.tonight{color:#b91c1c;font-size:20px;margin:0 0 10px}
-h3{margin:0 0 8px}
-.btn{display:inline-block;background:#1d4ed8;color:#fff;text-decoration:none;padding:9px 16px;border-radius:9px;font-weight:700;margin:6px 6px 0 0}
-.btn.book{background:#b91c1c}
-.lnk{display:inline-block;margin:6px 8px 0 0;color:#1d4ed8;text-decoration:none;font-weight:600}
-.foot{color:#6b7280;font-size:13px;margin:16px 2px}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5;font-size:16px}
+.wrap{max-width:600px;margin:0 auto;padding:14px}
+.hero{background:linear-gradient(135deg,#1f2a5e,#3f2a6e 55%,#5e2340);border:1px solid var(--line);border-radius:18px;padding:20px}
+.hero h1{font-size:22px}
+.hero .sub{margin-top:4px;color:#c9d2e3;font-size:13px}
+.nav{position:sticky;top:0;z-index:5;background:rgba(14,15,19,.92);backdrop-filter:blur(8px);display:flex;gap:8px;padding:10px 0;margin:8px 0 4px;flex-wrap:wrap}
+.nav a{font-size:13px;font-weight:700;color:#cbd5e1;background:#161a24;padding:7px 13px;border-radius:999px;text-decoration:none;border:1px solid var(--line)}
+.leg{margin:22px 2px 4px;padding:13px 16px;border-radius:14px;border:1px solid var(--line)}
+.leg h2{font-size:19px}
+.leg .lsub{font-size:12px;color:var(--mut);margin-top:2px}
+.leg.paris{background:linear-gradient(120deg,rgba(122,162,255,.16),rgba(122,162,255,.04));border-left:4px solid var(--fr)}
+.leg.uk{background:linear-gradient(120deg,rgba(95,208,166,.16),rgba(95,208,166,.04));border-left:4px solid var(--uk)}
+.leg.london{background:linear-gradient(120deg,rgba(192,147,252,.16),rgba(192,147,252,.04));border-left:4px solid var(--ldn)}
+.day{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin:13px 0}
+.dh{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+.dh .date{font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--acc)}
+.dh .ttl{font-size:16px;font-weight:700;color:#f3f5f9}
+.chip{font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--mut)}
+.chip.hot{color:#ffcf99;border-color:rgba(255,160,80,.4);background:rgba(255,140,60,.08)}
+.chip.cool{color:#a9d8ff;border-color:rgba(120,180,255,.35);background:rgba(90,150,255,.08)}
+.chip.book{color:#ffd0c8;border-color:rgba(255,120,100,.45);background:rgba(255,90,70,.1)}
+.tl{position:relative;margin:8px 0 0;padding-left:20px;border-left:2px solid var(--line)}
+.ev{position:relative;margin:0 0 15px}
+.ev:last-child{margin-bottom:2px}
+.ev::before{content:'';position:absolute;left:-27px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--acc);border:2px solid var(--bg)}
+.ev .t{font-size:12.5px;font-weight:800;color:var(--acc);letter-spacing:.3px}
+.ev .h{font-weight:600;color:var(--tx);margin-top:1px}
+.ev .n{font-size:14px;color:var(--mut);margin-top:2px}
+.ev img{width:100%;border-radius:12px;display:block;margin:8px 0 2px;border:1px solid var(--line)}
+.ev a{display:inline-block;margin:7px 8px 0 0;font-size:13px;font-weight:700;text-decoration:none;color:#dbe4ff;background:#222839;border:1px solid var(--line);padding:6px 12px;border-radius:9px}
+.ev a.book{background:rgba(255,90,70,.16);color:#ffd7cf;border-color:rgba(255,120,100,.4)}
+.foot{color:var(--mut);font-size:13px;margin:18px 2px;text-align:center}
+.paris .day,.p .ev::before,.p .t{}
 </style></head><body><div class="wrap">
 
-<div class="hero"><h1>✈️ Our Trip Plan</h1><div class="sub">🇫🇷 Paris → 🇬🇧 Birmingham → London · July</div></div>
+<div class="hero"><h1>✈️ Our Trip Plan</h1><div class="sub">🇫🇷 Paris · 🇬🇧 Staffordshire · London — July 2026</div></div>
 
-<div class="band"><h2>🇫🇷 Paris — 7–9 Jul</h2></div>
+<div class="nav"><a href="#paris">🇫🇷 Paris</a><a href="#uk">🇬🇧 Staffordshire</a><a href="#london">🎡 London</a></div>
 
-<p class="intro">Our last few Paris days 💛 — built around <b>your moules</b>, fun for <b>Alfie</b>, a little shopping + wine &amp; cheese, all <b>kept out of the hot afternoon sun</b>.</p>
+<!-- PARIS -->
+<div class="leg paris" id="paris" style="--acc:var(--fr)"><h2>🇫🇷 Paris — 7–9 Jul</h2><div class="lsub">Based at Bercy · heatwave (~33–38°C) → indoors 1–5pm, out mornings &amp; evenings</div></div>
 
-<div class="heat"><b>☀️ The heat trick:</b> outdoors in the cool mornings &amp; evenings; always somewhere <b>indoor / air-conditioned from ~1–5pm</b>. Taxis where handy.</div>
-
-<div class="card">
-<h2 class="tonight">🫘 TONIGHT — Moules at Bofinger</h2>
-<img alt="Moules-frites" src="https://commons.wikimedia.org/wiki/Special:FilePath/Moules-frites_at_Chez_Leon_in_Brussels.jpg?width=600">
-<p>A grand Belle Époque brasserie under a stained-glass dome at Bastille — proper <b>moules marinière</b>, a short hop away, and fine with Alfie. Dinner from 18:30.</p>
-<a class="btn book" href="https://bookings.zenchef.com/results?rid=84941">🍽️ Book tonight</a>
-<a class="lnk" href="tel:+33142728782">📞 Call</a>
-<a class="lnk" href="https://maps.google.com/?q=Bofinger+5+rue+de+la+Bastille+Paris">📍 Map</a>
+<div class="day p" style="--acc:var(--fr)">
+<div class="dh"><span class="date">Tue 7 Jul</span><span class="ttl">Shopping + moules</span><span class="chip hot">☀️ ~33°</span></div>
+<div class="tl">
+<div class="ev"><div class="t">10:30</div><div class="h">🧀 Marché d'Aligre + Le Baron Rouge</div><div class="n">Covered market fromageries (cheese + gifts), then barrel wine &amp; charcuterie in the shade.</div></div>
+<div class="ev"><div class="t">12:30</div><div class="h">🍽️ Lunch — Bercy Village</div><div class="n">Shaded pedestrian lane of old wine warehouses, 8 min from the hotel.</div></div>
+<div class="ev"><div class="t">14:00</div><div class="h">🛍️ Shopping (air-conditioned)</div><div class="n">Peak heat indoors: BHV Marais department store + shaded Marais boutique streets.</div></div>
+<div class="ev"><div class="t">19:30</div><div class="h">🫘 Dinner — Bofinger <span class="chip book">book</span></div><img alt="Moules-frites" src="https://commons.wikimedia.org/wiki/Special:FilePath/Moules-frites_at_Chez_Leon_in_Brussels.jpg?width=600"><div class="n">Belle Époque brasserie at Bastille — proper moules marinière. Phoebe's pick! Dinner from 18:30.</div><a class="book" href="https://bookings.zenchef.com/results?rid=84941">🍽️ Book</a><a href="https://maps.google.com/?q=Bofinger+Paris">📍 Map</a></div>
+</div>
 </div>
 
-<h2 class="day">📅 Wed — Alfie's day</h2>
-
-<div class="card">
-<h3>🐟 Morning — Aquarium de Paris</h3>
-<img alt="Aquarium de Paris tunnel" src="https://commons.wikimedia.org/wiki/Special:FilePath/Tunnel_aquarium_trocadero.jpg?width=600">
-<p>Cool &amp; dark, sharks + a toddler play area. Line 6 goes <b>direct</b> — and <b>Alfie's free</b> (under 3). Eiffel Tower photo at Trocadéro on the way.</p>
-<a class="btn" href="https://www.aquariumdeparis.com/en/">🎟️ Tickets</a>
+<div class="day p" style="--acc:var(--fr)">
+<div class="dh"><span class="date">Wed 8 Jul</span><span class="ttl">Alfie's day</span><span class="chip hot">☀️ ~37°</span></div>
+<div class="tl">
+<div class="ev"><div class="t">09:30</div><div class="h">🐟 Aquarium de Paris</div><img alt="Aquarium de Paris" src="https://commons.wikimedia.org/wiki/Special:FilePath/Tunnel_aquarium_trocadero.jpg?width=600"><div class="n">Line 6 direct from Bercy. Cool, dark, sharks + toddler play area — Alfie's free (under 3). Eiffel photo at Trocadéro on the way.</div><a href="https://www.aquariumdeparis.com/en/">🎟️ Tickets</a></div>
+<div class="ev"><div class="t">12:30</div><div class="h">🥪 Lunch near Trocadéro</div><div class="n">Child-friendly brasserie or a shaded picnic in the gardens.</div></div>
+<div class="ev"><div class="t">14:45</div><div class="h">🧠 Cité des Enfants <span class="chip book">book</span></div><img alt="Cité des Sciences" src="https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9_des_sciences_et_de_l%27industrie_05.jpg?width=600"><div class="n">Hands-on indoor play-museum (air-con), 2–6 zone. 90-min timed slot — dodges the afternoon heat. €12 each.</div><a class="book" href="https://billetterie.cite-sciences.fr/">🎟️ Book slot</a></div>
+<div class="ev"><div class="t">16:30</div><div class="h">🌳 Parc de Bercy</div><img alt="Parc de Bercy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jardin_des_Senteurs_within_Jardin_Yitzhak_Rabin.jpg?width=600"><div class="n">Shaded gardens + playground on the hotel's doorstep to run Alfie out before dinner.</div></div>
+<div class="ev"><div class="t">19:00</div><div class="h">🍺 Dinner — beer &amp; wine</div><div class="n">Bercy Village wine bar or back to Le Baron Rouge.</div></div>
+</div>
 </div>
 
-<div class="card">
-<h3>🧠 Afternoon (hottest part → indoors) — Cité des Enfants</h3>
-<img alt="Cité des Sciences" src="https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A9_des_sciences_et_de_l%27industrie_05.jpg?width=600">
-<p>Amazing hands-on indoor play-museum, air-conditioned — the 2–6 zone is spot-on for Alfie. 90-min slots; we'll grab a mid-afternoon one. €12 each.</p>
-<a class="btn" href="https://billetterie.cite-sciences.fr/">🎟️ Book slot</a>
+<div class="day p" style="--acc:var(--fr)">
+<div class="dh"><span class="date">Thu 9 Jul</span><span class="ttl">Last Paris morning → fly to UK</span><span class="chip hot">☀️ ~38°</span></div>
+<div class="tl">
+<div class="ev"><div class="t">09:00</div><div class="h">🥐 Breakfast — Le Train Bleu</div><img alt="Le Train Bleu" src="https://commons.wikimedia.org/wiki/Special:FilePath/Le_Train_Bleu.jpg?width=600"><div class="n">The gorgeous Belle Époque restaurant inside Gare de Lyon, 6 min from the hotel.</div><a href="https://www.le-train-bleu.com/en/">Reserve</a></div>
+<div class="ev"><div class="t">10:00</div><div class="h">🚕 Leave for the airport</div><div class="n">Check out and head to CDG (allow for UK border pre-clearance).</div></div>
+<div class="ev"><div class="t">~13:20</div><div class="h">✈️ Fly to Birmingham</div><div class="n">Short hop — lands ~13:40. Then the UK leg begins.</div></div>
+</div>
 </div>
 
-<div class="card">
-<h3>🌳 Late afternoon — Parc de Bercy</h3>
-<img alt="Parc de Bercy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jardin_des_Senteurs_within_Jardin_Yitzhak_Rabin.jpg?width=600">
-<p>Shaded gardens + playground to run Alfie out before dinner. Then beer/wine at Bercy Village or Le Baron Rouge.</p>
+<!-- UK -->
+<div class="leg uk" id="uk" style="--acc:var(--uk)"><h2>🇬🇧 Staffordshire — 9–17 Jul</h2><div class="lsub">Based with Grandad · hire car · baby-paced day trips (home each night) · cool &amp; showery ~20°, hot front half 9–12 Jul</div></div>
+
+<div class="day" style="--acc:var(--uk)">
+<div class="dh"><span class="date">Thu 9 Jul</span><span class="ttl">Arrive &amp; settle</span></div>
+<div class="tl">
+<div class="ev"><div class="t">~13:40</div><div class="h">🛬 Land in Birmingham</div></div>
+<div class="ev"><div class="t">15:00</div><div class="h">🚗 Pick up hire car → base</div><div class="n">SIXT at BHX, then drive to Grandad's.</div></div>
+<div class="ev"><div class="t">eve</div><div class="h">🌲 Settle in</div><div class="n">Optional dusk stroll on Cannock Chase.</div></div>
+</div>
 </div>
 
-<h2 class="day">🛍️ Also (flexible)</h2>
-<p class="intro"><b>Wine &amp; cheese:</b> Marché d'Aligre fromageries + barrel wine at Le Baron Rouge (shaded). <b>Shopping:</b> air-conditioned BHV Marais + shaded Marais boutique streets.</p>
-
-<div class="card">
-<h2 class="day" style="margin-top:0">📅 Thu — Last Paris morning</h2>
-<img alt="Le Train Bleu" src="https://commons.wikimedia.org/wiki/Special:FilePath/Le_Train_Bleu.jpg?width=600">
-<p>We head off late morning. Last treat before we go: breakfast at the gorgeous <b>Le Train Bleu</b>, the Belle Époque restaurant inside Gare de Lyon. Then on to Birmingham.</p>
-<a class="btn" href="https://www.le-train-bleu.com/en/">Le Train Bleu</a>
+<div class="day" style="--acc:var(--uk)">
+<div class="dh"><span class="date">Fri 10 Jul</span><span class="ttl">Shugborough + Lichfield</span><span class="chip hot">☀️ hot</span><span class="chip">~15 min</span></div>
+<div class="tl">
+<div class="ev"><div class="t">day</div><div class="h">🏛️ Easy shaded opener</div><div class="n">NT estate — walled garden, parkland, farm animals — then Lichfield's 3-spired cathedral &amp; Beacon Park. Doorstep + bail-able if Alfie's off.</div><a href="https://maps.google.com/?q=Shugborough+Estate">📍 Shugborough</a><a href="https://maps.google.com/?q=Lichfield+Cathedral">📍 Lichfield</a></div>
+</div>
 </div>
 
-<div class="band"><h2>🇬🇧 Birmingham — 9–17 Jul</h2></div>
-
-<div class="card">
-<h3>👴 A week with Grandad</h3>
-<img alt="Birmingham" src="https://commons.wikimedia.org/wiki/Special:FilePath/Birmingham_Council_House.jpg?width=600">
-<p>Family time in Birmingham with a hire car, so easy day trips for Alfie. Best toddler-friendly options nearby:</p>
-<a class="lnk" href="https://www.visitsealife.com/birmingham/">🐠 National SEA LIFE Centre</a>
-<a class="lnk" href="https://www.cadburyworld.co.uk/">🍫 Cadbury World</a>
-<a class="lnk" href="https://www.wmsp.co.uk/">🦁 West Midland Safari Park</a>
-<a class="lnk" href="https://maps.google.com/?q=Cannon+Hill+Park+Birmingham">🌳 Cannon Hill Park</a>
+<div class="day" style="--acc:var(--uk)">
+<div class="dh"><span class="date">Sat 11 Jul</span><span class="ttl">Rest / local</span><span class="chip hot">☀️ hot</span></div>
+<div class="tl">
+<div class="ev"><div class="t">am</div><div class="h">🌲 Early Cannock Chase</div><div class="n">Then relax at base — dodge the weekend crowds + peak heat.</div></div>
+</div>
 </div>
 
-<div class="band"><h2>🇬🇧 London — 17–19 Jul</h2></div>
-
-<div class="card">
-<h3>🦕 Two nights before home</h3>
-<img alt="Natural History Museum, London" src="https://commons.wikimedia.org/wiki/Special:FilePath/Natural_History_Museum_London_Jan_2006.jpg?width=600">
-<p>A couple of London days before we fly home from Gatwick on <b>Sun 19</b>. Big hit for Alfie: the <b>Natural History Museum</b> — free, indoor, dinosaurs. Plus the Diana Memorial Playground in Kensington Gardens right nearby.</p>
-<a class="btn" href="https://www.nhm.ac.uk/">🦖 Natural History Museum</a>
-<a class="lnk" href="https://maps.google.com/?q=Diana+Memorial+Playground+London">🛝 Diana Playground</a>
+<div class="day" style="--acc:var(--uk)">
+<div class="dh"><span class="date">Sun 12 Jul</span><span class="ttl">Ironbridge + Blists Hill</span><span class="chip hot">☀️ easing</span><span class="chip">~35 min</span></div>
+<div class="tl">
+<div class="ev"><div class="t">day</div><div class="h">🏭 Victorian living-museum</div><div class="n">Blists Hill is one of the most pram-friendly attractions on the list; then the Iron Bridge + riverside. Lots indoor = rain/shade backup.</div><a href="https://maps.google.com/?q=Blists+Hill+Victorian+Town">📍 Map</a></div>
+</div>
 </div>
 
-<p class="foot">Paris moules ✔ · Alfie fun throughout ✔ · shopping ✔ · wine &amp; cheese ✔ · out of the sun ✔ &nbsp;x</p>
+<div class="day" style="--acc:var(--uk)">
+<div class="dh"><span class="date">Mon 13 Jul</span><span class="ttl">North Wales — Conwy + Llandudno</span><span class="chip cool">🌤️ cooler</span><span class="chip">~1h45</span></div>
+<div class="tl">
+<div class="ev"><div class="t">early</div><div class="h">🏰 Castle + seaside</div><div class="n">Long drive on a quiet weekday: top-tier Conwy Castle + walled town, then Llandudno's Victorian prom + Great Orme. Sea breeze + flat pram walking.</div><a href="https://maps.google.com/?q=Conwy+Castle">📍 Conwy</a><a href="https://maps.google.com/?q=Llandudno">📍 Llandudno</a></div>
+</div>
+</div>
+
+<div class="day" style="--acc:var(--uk)">
+<div class="dh"><span class="date">Tue 14 Jul</span><span class="ttl">Chatsworth + Bakewell</span><span class="chip cool">🌤️ cooler</span><span class="chip">~1h</span></div>
+<div class="tl">
+<div class="ev"><div class="t">day</div><div class="h">🦌 Stately home + pudding</div><div class="n">Grand house + parkland; the farmyard/playground + river walk (pram-friendly) if Alfie's restless. Then Bakewell market town + the famous pudding.</div><a href="https://maps.google.com/?q=Chatsworth+House">📍 Chatsworth</a><a href="https://maps.google.com/?q=Bakewell">📍 Bakewell</a></div>
+</div>
+</div>
+
+<div class="day" style="--acc:var(--uk)">
+<div class="dh"><span class="date">Wed 15 Jul</span><span class="ttl">Chester Zoo or Shrewsbury</span><span class="chip">~1h / 45 min</span></div>
+<div class="tl">
+<div class="ev"><div class="t">day</div><div class="h">🦁 Pick your energy level</div><div class="n">Chester Zoo (world-class, pram-built, full day) OR pretty medieval Shrewsbury + Quarry Park by the river.</div><a href="https://maps.google.com/?q=Chester+Zoo">📍 Chester Zoo</a><a href="https://maps.google.com/?q=Shrewsbury">📍 Shrewsbury</a></div>
+</div>
+</div>
+
+<div class="day" style="--acc:var(--uk)">
+<div class="dh"><span class="date">Thu 16 Jul</span><span class="ttl">Flex day</span><span class="chip">buffer</span></div>
+<div class="tl">
+<div class="ev"><div class="t">day</div><div class="h">🍯 Cotswolds or packing</div><div class="n">Bourton-on-the-Water (~1h15, honey-stone villages, paddling-friendly river) — or keep it as a buffer/packing day.</div><a href="https://maps.google.com/?q=Bourton-on-the-Water">📍 Bourton</a></div>
+</div>
+</div>
+
+<div class="day" style="--acc:var(--uk)">
+<div class="dh"><span class="date">Fri 17 Jul</span><span class="ttl">On to London</span></div>
+<div class="tl">
+<div class="ev"><div class="t">day</div><div class="h">🚄 Train down to London</div></div>
+</div>
+</div>
+
+<!-- LONDON -->
+<div class="leg london" id="london" style="--acc:var(--ldn)"><h2>🎡 London — 17–19 Jul</h2><div class="lsub">Two nights before flying home from Gatwick</div></div>
+
+<div class="day" style="--acc:var(--ldn)">
+<div class="dh"><span class="date">Fri 17 Jul</span><span class="ttl">Arrive</span></div>
+<div class="tl"><div class="ev"><div class="t">pm</div><div class="h">🚄 Into London &amp; settle</div></div></div>
+</div>
+
+<div class="day" style="--acc:var(--ldn)">
+<div class="dh"><span class="date">Sat 18 Jul</span><span class="ttl">Museum + playground</span></div>
+<div class="tl">
+<div class="ev"><div class="t">10:00</div><div class="h">🦕 Natural History Museum</div><img alt="Natural History Museum, London" src="https://commons.wikimedia.org/wiki/Special:FilePath/Natural_History_Museum_London_Jan_2006.jpg?width=600"><div class="n">Free, indoor, dinosaurs — a big Alfie hit.</div><a href="https://www.nhm.ac.uk/">🦖 Info</a></div>
+<div class="ev"><div class="t">pm</div><div class="h">🛝 Diana Memorial Playground</div><div class="n">In Kensington Gardens, right nearby — pirate ship + sand.</div><a href="https://maps.google.com/?q=Diana+Memorial+Playground">📍 Map</a></div>
+</div>
+</div>
+
+<div class="day" style="--acc:var(--ldn)">
+<div class="dh"><span class="date">Sun 19 Jul</span><span class="ttl">Fly home</span></div>
+<div class="tl">
+<div class="ev"><div class="t">~09:45</div><div class="h">🚕 Head to Gatwick</div></div>
+<div class="ev"><div class="t">~12:45</div><div class="h">✈️ Fly home to Singapore</div></div>
+</div>
+</div>
+
+<p class="foot">Paris moules ✔ · Alfie fun throughout ✔ · shopping ✔ · wine &amp; cheese ✔ · baby-paced ✔ &nbsp;x</p>
 </div></body></html>
