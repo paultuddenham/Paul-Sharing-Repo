@@ -5,101 +5,181 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>London Together — Sat 18 July</title>
 <style>
-  :root{--bg:#0f1012;--card:#1a1c20;--edge:#2a2d33;--ink:#f3f1ea;--ink2:#c3c0b6;--muted:#8b887f;--gold:#d8b45c;--accent:#7cc0ff;--good:#7fd7a0}
+  :root{--bg:#0f1012;--card:#1a1c20;--edge:#2a2d33;--ink:#f3f1ea;--ink2:#c9c6bc;--muted:#8b887f;--gold:#d8b45c;--accent:#7cc0ff;--pink:#f2a6c2;--good:#7fd7a0}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Segoe UI",Roboto,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:620px;margin:0 auto;padding:22px 16px 60px}
-  .hero{text-align:center;padding:14px 6px 6px}
+  .wrap{max-width:640px;margin:0 auto;padding:0 0 60px}
+  .pad{padding:0 16px}
+  /* hero */
+  .hero{position:relative}
+  .hero img{width:100%;height:230px;object-fit:cover;display:block;filter:brightness(.72)}
+  .hero .ct{position:absolute;left:0;right:0;bottom:0;padding:16px;text-align:center;background:linear-gradient(180deg,rgba(15,16,18,0),rgba(15,16,18,.85))}
   .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
-  h1{font-size:29px;line-height:1.15;margin:8px 0 4px;font-weight:800;letter-spacing:-.02em}
+  h1{font-size:30px;line-height:1.1;margin:6px 0 3px;font-weight:800;letter-spacing:-.02em}
   .who{color:var(--ink2);font-size:15px}
-  .meta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:16px 0 6px}
+  .meta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 4px}
   .chip{background:var(--card);border:1px solid var(--edge);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--ink2)}
   .chip b{color:var(--ink)}
-  .meet{background:linear-gradient(180deg,rgba(216,180,92,.14),rgba(216,180,92,.04));border:1px solid rgba(216,180,92,.4);border-radius:14px;padding:14px 16px;margin:18px 0 22px;text-align:center}
-  .meet .t{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .meet{background:linear-gradient(180deg,rgba(216,180,92,.14),rgba(216,180,92,.04));border:1px solid rgba(216,180,92,.4);border-radius:14px;padding:14px 16px;margin:16px 16px 6px;text-align:center}
+  .meet .t{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700}
   .meet .p{font-size:19px;font-weight:700;margin:3px 0 2px}
   .meet .s{font-size:14px;color:var(--ink2)}
-  .stop{position:relative;background:var(--card);border:1px solid var(--edge);border-radius:16px;padding:15px 16px 16px;margin:0 0 14px}
-  .stop .time{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.04em;color:#12140f;background:var(--gold);border-radius:6px;padding:2px 9px;margin-bottom:8px}
-  .stop h2{font-size:20px;margin:2px 0 6px;font-weight:800;letter-spacing:-.01em}
+  /* travel connector */
+  .leg{display:flex;align-items:center;gap:10px;margin:16px 16px 4px;color:var(--ink2);font-size:14px}
+  .leg .ic{flex:0 0 auto;font-size:18px}
+  .leg b{color:var(--ink)}
+  /* stop card */
+  .stop{background:var(--card);border:1px solid var(--edge);border-radius:18px;margin:8px 16px 6px;overflow:hidden}
+  .stop img{width:100%;height:190px;object-fit:cover;display:block}
+  .body{padding:14px 16px 16px}
+  .time{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.04em;color:#12140f;background:var(--gold);border-radius:6px;padding:2px 9px;margin-bottom:8px}
+  .stop h2{font-size:21px;margin:2px 0 6px;font-weight:800;letter-spacing:-.01em}
   .stop p{margin:6px 0;color:var(--ink2);font-size:15px}
-  .stop .tag{display:inline-block;font-size:12px;color:var(--muted);margin-top:2px}
-  .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .seg{margin-top:12px;border-top:1px solid var(--edge);padding-top:11px}
+  .seg .h{font-size:13px;font-weight:800;letter-spacing:.03em;display:flex;align-items:center;gap:6px}
+  .seg.pho .h{color:var(--pink)}
+  .seg.pub .h{color:var(--gold)}
+  .seg ul{margin:7px 0 0;padding-left:18px}
+  .seg li{margin:5px 0;font-size:14px;color:var(--ink2)}
+  .seg li b{color:var(--ink)}
+  .segimg{width:100%;height:130px;object-fit:cover;border-radius:10px;margin-top:9px;display:block}
+  .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
   .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:10px;border:1px solid var(--edge);color:var(--accent);background:#20242c}
   .btn:active{opacity:.6}
-  .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
-  .pick{color:var(--ink);font-weight:600}
-  .end{background:linear-gradient(180deg,rgba(124,192,255,.12),rgba(124,192,255,.03));border:1px solid rgba(124,192,255,.35);border-radius:14px;padding:15px 16px;margin-top:6px;text-align:center}
+  .end{background:linear-gradient(180deg,rgba(124,192,255,.12),rgba(124,192,255,.03));border:1px solid rgba(124,192,255,.35);border-radius:14px;padding:15px 16px;margin:14px 16px 0;text-align:center}
   .end .p{font-size:17px;font-weight:700}
-  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:26px;line-height:1.6}
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin:24px 16px 0;line-height:1.6}
   a.plain{color:var(--accent)}
+  .key{display:flex;gap:14px;justify-content:center;font-size:12px;color:var(--muted);margin:10px 16px 0}
+  .key span b{color:var(--pink)} .key span.g b{color:var(--gold)}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <div class="hero">
-    <div class="eyebrow">A day out</div>
-    <h1>London Together 🎡</h1>
-    <div class="who">Saturday 18 July · with Dad, Sis, Phoebe &amp; Alfie</div>
-    <div class="meta">
-      <span class="chip">☀️ <b>~24°C</b>, sunny</span>
-      <span class="chip">👶 pram-friendly</span>
-      <span class="chip">🌇 light till <b>21:08</b></span>
+    <img loading="eager" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/The_Shard_at_sunset_2017_%28cropped%29.jpg" alt="The Shard, London">
+    <div class="ct">
+      <div class="eyebrow">A day out</div>
+      <h1>London Together 🎡</h1>
+      <div class="who">Saturday 18 July · Dad, Sis, Phoebe &amp; Alfie</div>
     </div>
   </div>
+
+  <div class="meta pad">
+    <span class="chip">☀️ <b>~24°C</b>, sunny</span>
+    <span class="chip">👶 pram-friendly</span>
+    <span class="chip">🌇 light till <b>21:08</b></span>
+  </div>
+  <div class="key"><span>🛍️ <b>For Phoebe</b> = shops</span><span class="g">🍺 <b>For Dad &amp; Sis</b> = pubs &amp; grub</span></div>
 
   <div class="meet">
     <div class="t">Where we meet</div>
     <div class="p">📍 Shangri-La, The Shard</div>
-    <div class="s">11:00 · 31 St Thomas St, London Bridge · <a class="plain" href="https://maps.google.com/?q=Shangri-La+The+Shard+London">open in Maps ↗</a></div>
+    <div class="s">11:00 · London Bridge · <a class="plain" href="https://maps.google.com/?q=Shangri-La+The+Shard+London">Maps ↗</a></div>
   </div>
 
+  <!-- BOROUGH -->
+  <div class="leg"><span class="ic">🚶</span><div><b>5-min walk</b> from the hotel &mdash; straight to the market.</div></div>
   <div class="stop">
-    <div class="time">11:15</div>
-    <h2>Borough Market 🥐</h2>
-    <p>Meet at the hotel, then a 5-minute stroll over to the market. Graze as we go — Bread Ahead doughnuts, Kappacasein toasted cheese, Monmouth coffee.</p>
-    <p><span class="lbl">Quiet spot</span> Southwark Cathedral next door (free, calm). <span class="lbl">Pint</span> The Rake / The Market Porter.</p>
-    <div class="row"><a class="btn" href="https://maps.google.com/?q=Borough+Market+London">🗺️ Borough Market</a></div>
-  </div>
-
-  <div class="stop">
-    <div class="time">13:00</div>
-    <h2>Covent Garden — lunch 🍽️</h2>
-    <p>Hop a black cab over from London Bridge (~15 min). Lunch: <span class="pick">Flat Iron</span> (steak, quick) · <span class="pick">Dishoom</span> · <span class="pick">Shake Shack</span>.</p>
-    <p>The Piazza <b>street performers</b> are brilliant for the kids. Wander Neal's Yard &amp; Seven Dials. Gelato at Venchi.</p>
-    <div class="row"><a class="btn" href="https://maps.google.com/?q=Covent+Garden+Piazza+London">🗺️ Covent Garden</a></div>
-  </div>
-
-  <div class="stop">
-    <div class="time">14:45</div>
-    <h2>Liberty + Carnaby 🛍️</h2>
-    <p>A lovely 12-minute walk through Soho. Liberty (the beautiful Tudor building), Carnaby Street, and Kingly Court for a coffee, loos &amp; a breather.</p>
-    <div class="row">
-      <a class="btn" href="https://maps.google.com/?q=Liberty+London">🗺️ Liberty</a>
-      <a class="btn" href="https://maps.google.com/?q=Carnaby+Street+London">🗺️ Carnaby</a>
+    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/London_2018_March_IMG_0663.jpg/1280px-London_2018_March_IMG_0663.jpg" alt="Borough Market">
+    <div class="body">
+      <div class="time">11:15</div>
+      <h2>Borough Market</h2>
+      <p>London's best food market &mdash; graze as you wander. Bread Ahead doughnuts, Kappacasein toasted cheese, Monmouth coffee. Southwark Cathedral next door is a lovely, calm 5-min detour.</p>
+      <div class="seg pho"><div class="h">🛍️ For Phoebe</div><ul>
+        <li><b>Bermondsey Street</b> (10-min walk south) &mdash; indie boutiques, the White Cube gallery &amp; lovely little homeware shops.</li>
+        <li>Market makers' stalls &mdash; ceramics, olive wood, spices &amp; artisan treats to take home.</li>
+      </ul></div>
+      <div class="seg pub"><div class="h">🍺 For Dad &amp; Sis</div><ul>
+        <li><b>The Market Porter</b> &mdash; proper old market pub, real ales, been pouring since dawn for the traders.</li>
+        <li><b>The George Inn</b> (Borough High St) &mdash; London's last galleried coaching inn (National Trust); pints in the historic courtyard.</li>
+        <li>Market bites: a <b>Scotch egg</b>, a hot salt-beef roll, or fresh oysters by the river.</li>
+      </ul></div>
+      <div class="row"><a class="btn" href="https://maps.google.com/?q=Borough+Market+London">🗺️ Borough Market</a><a class="btn" href="https://maps.google.com/?q=The+Market+Porter+London">🍺 Market Porter</a></div>
     </div>
   </div>
 
+  <!-- COVENT GARDEN -->
+  <div class="leg"><span class="ic">🚕</span><div>To <b>Covent Garden</b> &mdash; grab a <b>black cab</b> from London Bridge (~15 min, ~&pound;13). Skip the tube here (deep, no lift).</div></div>
   <div class="stop">
-    <div class="time">16:45</div>
-    <h2>Camden 🎸</h2>
-    <p>Hop the <b>№ 88 bus straight from Oxford Circus</b> (top deck for the kids!). Camden Market street food, the Lock &amp; the canal. Fancy calmer? The canal walk up to Primrose Hill is gorgeous.</p>
-    <p><span class="lbl">Pint</span> BrewDog Camden / The Hawley Arms.</p>
-    <div class="row"><a class="btn" href="https://maps.google.com/?q=Camden+Market+London">🗺️ Camden</a></div>
+    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/42/Covent_Garden_Interior_May_2006_crop.jpg" alt="Covent Garden">
+    <div class="body">
+      <div class="time">13:00 · lunch</div>
+      <h2>Covent Garden</h2>
+      <p>The Piazza <b>street performers</b> are a hit with Phoebe &amp; Alfie. Lunch options for all: <b>Flat Iron</b> (great-value steak, no bookings), <b>Dishoom</b> (iconic), or <b>Shake Shack</b> (easy with the kids). Gelato at Venchi after.</p>
+      <div class="seg pho"><div class="h">🛍️ For Phoebe</div><ul>
+        <li><b>Seven Dials &amp; Neal's Yard</b> &mdash; the prettiest corner: Aesop, Le Labo, Neal's Yard Remedies, indie fashion.</li>
+        <li><b>The Apple Market</b> &mdash; handmade jewellery &amp; craft stalls under the glass roof.</li>
+        <li><b>Charlotte Tilbury</b>, <b>Space NK</b> &amp; <b>Chanel Beauty</b> around the Piazza; the pretty <b>Moomin</b> &amp; <b>Whittard</b> shops too.</li>
+      </ul></div>
+      <div class="seg pub"><div class="h">🍺 For Dad &amp; Sis</div><ul>
+        <li><b>The Lamb &amp; Flag</b> (Rose St) &mdash; a gloriously old, wonky Covent Garden pub tucked down an alley.</li>
+        <li><b>The Harp</b> (Chandos Pl) &mdash; multi-award-winning ale house, famous for its sausages.</li>
+      </ul></div>
+      <div class="row"><a class="btn" href="https://maps.google.com/?q=Covent+Garden+Piazza+London">🗺️ Covent Garden</a><a class="btn" href="https://maps.google.com/?q=Neals+Yard+London">🛍️ Neal's Yard</a><a class="btn" href="https://maps.google.com/?q=The+Lamb+and+Flag+Covent+Garden">🍺 Lamb &amp; Flag</a></div>
+    </div>
+  </div>
+
+  <!-- LIBERTY + CARNABY -->
+  <div class="leg"><span class="ic">🚶</span><div>A lovely <b>12-min walk</b> through Soho to Liberty &amp; Carnaby (all pedestrian).</div></div>
+  <div class="stop">
+    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Liberty_department_store_London.jpg" alt="Liberty, London">
+    <div class="body">
+      <div class="time">14:45</div>
+      <h2>Liberty + Carnaby</h2>
+      <p>Liberty is worth it just to wander &mdash; the mock-Tudor building is stunning. Carnaby &amp; Kingly Court next door for more shops, coffee, loos &amp; high chairs.</p>
+      <div class="seg pho"><div class="h">🛍️ For Phoebe</div><ul>
+        <li><b>Liberty Beauty Hall</b> &mdash; the famous one; plus Liberty's signature scarves &amp; fabric prints.</li>
+        <li><b>Carnaby:</b> &amp; Other Stories, COS, Ganni, Jo Malone, Lush, and Kingly Court's little boutiques.</li>
+      </ul></div>
+      <div class="seg pub"><div class="h">🍺 For Dad &amp; Sis</div><ul>
+        <li><b>BrewDog Soho</b> or a proper Soho boozer &mdash; the <b>Clachan</b> (Kingly St) is a beautiful old Victorian pub right by Liberty.</li>
+      </ul></div>
+      <div class="row"><a class="btn" href="https://maps.google.com/?q=Liberty+London">🗺️ Liberty</a><a class="btn" href="https://maps.google.com/?q=Carnaby+Street+London">🛍️ Carnaby</a><a class="btn" href="https://maps.google.com/?q=Kingly+Court+London">☕ Kingly Court</a></div>
+    </div>
+  </div>
+
+  <!-- CAMDEN -->
+  <div class="leg"><span class="ic">🚌</span><div>To <b>Camden</b> &mdash; hop the <b>№ 88 bus</b> from Oxford Circus (top deck!). Avoid Camden Town tube (exit-only Sat afternoons).</div></div>
+  <div class="stop">
+    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Camden_markets_entrance.JPG" alt="Camden Market">
+    <div class="body">
+      <div class="time">16:45</div>
+      <h2>Camden</h2>
+      <p>Buzzing markets, the Lock &amp; the canal. Global street food for a late graze. Calmer with the kids? The canal towpath up to Primrose Hill is beautiful (and great views).</p>
+      <div class="seg pho"><div class="h">🛍️ For Phoebe</div><ul>
+        <li><b>Camden Market &amp; the Stables</b> &mdash; vintage, indie designers, leather, jewellery &amp; one-off finds.</li>
+        <li>Fun with Alfie: the weird &amp; wonderful <b>Cyberdog</b>.</li>
+      </ul></div>
+      <div class="seg pub"><div class="h">🍺 For Dad &amp; Sis</div><ul>
+        <li><b>The Hawley Arms</b> &mdash; the legendary Camden pub (Amy Winehouse's local); great terrace.</li>
+        <li><b>BrewDog Camden</b> or a canal-side pint at <b>The Lock Tavern</b>.</li>
+      </ul></div>
+      <div class="row"><a class="btn" href="https://maps.google.com/?q=Camden+Market+London">🗺️ Camden Market</a><a class="btn" href="https://maps.google.com/?q=The+Hawley+Arms+Camden">🍺 Hawley Arms</a><a class="btn" href="https://maps.google.com/?q=Primrose+Hill+London">🌳 Primrose Hill</a></div>
+    </div>
+  </div>
+
+  <!-- A proper British dinner idea -->
+  <div class="stop">
+    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Fish_and_chips_blackpool.jpg/1280px-Fish_and_chips_blackpool.jpg" alt="Fish and chips">
+    <div class="body">
+      <div class="time">before the train</div>
+      <h2>A proper British bite 🇬🇧</h2>
+      <p>If dad &amp; sis fancy something classic before Euston: <b>fish &amp; chips</b>, a <b>steak &amp; ale pie</b>, or <b>bangers &amp; mash</b> in a traditional pub. <b>The Faltering Fullback</b> (near the route) and <b>The Poet</b> do proper pub food; or grab chips to eat on the way.</p>
+    </div>
   </div>
 
   <div class="end">
-    <div class="lbl" style="color:var(--accent)">Heading home</div>
-    <div class="p">🚆 Dad &amp; Sis — train home 19:38</div>
-    <div class="s" style="color:var(--ink2);font-size:14px;margin-top:3px">From London Euston to Lichfield (arr 21:19). Camden → Euston is a short hop. Plenty of time.</div>
+    <div class="t" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700">Heading home</div>
+    <div class="p">🚆 Dad &amp; Sis — train 19:38</div>
+    <div class="s" style="color:var(--ink2);font-size:14px;margin-top:3px">London Euston → Lichfield (arr 21:19). Camden → Euston is a short hop — plenty of time.</div>
     <div class="row" style="justify-content:center"><a class="btn" href="https://maps.google.com/?q=London+Euston+Station">🗺️ Euston</a></div>
   </div>
 
   <div class="foot">
     Flexible &amp; self-paced — swap or skip anything if the little ones need a break.<br>
-    Made with ❤️ for the family · Sat 18 Jul 2026
+    Photos: Wikimedia Commons · Made with ❤️ for the family · Sat 18 Jul 2026
   </div>
 
 </div>
