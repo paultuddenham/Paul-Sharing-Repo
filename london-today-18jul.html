@@ -10,7 +10,6 @@
   body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Segoe UI",Roboto,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   .wrap{max-width:640px;margin:0 auto;padding:0 0 60px}
   .pad{padding:0 16px}
-  /* hero */
   .hero{position:relative}
   .hero img{width:100%;height:230px;object-fit:cover;display:block;filter:brightness(.72)}
   .hero .ct{position:absolute;left:0;right:0;bottom:0;padding:16px;text-align:center;background:linear-gradient(180deg,rgba(15,16,18,0),rgba(15,16,18,.85))}
@@ -24,11 +23,9 @@
   .meet .t{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700}
   .meet .p{font-size:19px;font-weight:700;margin:3px 0 2px}
   .meet .s{font-size:14px;color:var(--ink2)}
-  /* travel connector */
   .leg{display:flex;align-items:center;gap:10px;margin:16px 16px 4px;color:var(--ink2);font-size:14px}
   .leg .ic{flex:0 0 auto;font-size:18px}
   .leg b{color:var(--ink)}
-  /* stop card */
   .stop{background:var(--card);border:1px solid var(--edge);border-radius:18px;margin:8px 16px 6px;overflow:hidden}
   .stop img{width:100%;height:190px;object-fit:cover;display:block}
   .body{padding:14px 16px 16px}
@@ -40,16 +37,13 @@
   .seg.pho .h{color:var(--pink)}
   .seg.pub .h{color:var(--gold)}
   .seg ul{margin:7px 0 0;padding-left:18px}
-  .seg li{margin:5px 0;font-size:14px;color:var(--ink2)}
-  .seg li b{color:var(--ink)}
-  /* collapsible detail sections (tap to expand — keeps the page short) */
+  .seg li{margin:6px 0;font-size:14px;color:var(--ink2)}
   details.seg summary{list-style:none;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent}
   details.seg summary::-webkit-details-marker{display:none}
   .seg summary.h::after{content:"▾";margin-left:auto;color:var(--muted);font-size:12px;transition:transform .2s}
   details.seg:not([open]) summary.h::after{transform:rotate(-90deg)}
   .seg summary.h .hint{font-weight:600;color:var(--muted);font-size:11px;letter-spacing:0;text-transform:none}
   details.seg[open] summary.h .hint{display:none}
-  .segimg{width:100%;height:130px;object-fit:cover;border-radius:10px;margin-top:9px;display:block}
   .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
   .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:10px;border:1px solid var(--edge);color:var(--accent);background:#20242c}
   .btn:active{opacity:.6}
@@ -59,6 +53,10 @@
   a.plain{color:var(--accent)}
   .key{display:flex;gap:14px;justify-content:center;font-size:12px;color:var(--muted);margin:10px 16px 0}
   .key span b{color:var(--pink)} .key span.g b{color:var(--gold)}
+  /* every named place is a tappable link — subtle accent underline, keeps text readable */
+  a.ln{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+  a.ln:active{color:var(--accent)}
+  .tiplink{font-size:11px;color:var(--muted);text-align:center;margin:6px 16px 0}
 </style>
 </head>
 <body>
@@ -79,11 +77,12 @@
     <span class="chip">🌇 light till <b>21:08</b></span>
   </div>
   <div class="key"><span>🛍️ <b>For Phoebe</b> = shops</span><span class="g">🍺 <b>For Dad &amp; Sis</b> = pubs &amp; grub</span></div>
+  <div class="tiplink">every place is a link — tap any name for map, hours &amp; info</div>
 
   <div class="meet">
     <div class="t">Where we meet</div>
-    <div class="p">📍 Shangri-La, The Shard</div>
-    <div class="s">11:00 · London Bridge · <a class="plain" href="https://maps.google.com/?q=Shangri-La+The+Shard+London">Maps ↗</a></div>
+    <div class="p">📍 <a class="ln" href="https://maps.google.com/?q=Shangri-La+The+Shard+London">Shangri-La, The Shard</a></div>
+    <div class="s">11:00 · London Bridge</div>
   </div>
 
   <!-- BOROUGH -->
@@ -92,16 +91,16 @@
     <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/London_2018_March_IMG_0663.jpg/1280px-London_2018_March_IMG_0663.jpg" alt="Borough Market">
     <div class="body">
       <div class="time">11:15</div>
-      <h2>Borough Market</h2>
-      <p>London's best food market &mdash; graze as you wander. Bread Ahead doughnuts, Kappacasein toasted cheese, Monmouth coffee. Southwark Cathedral next door is a lovely, calm 5-min detour.</p>
+      <h2><a class="ln" href="https://maps.google.com/?q=Borough+Market+London">Borough Market</a></h2>
+      <p>London's best food market &mdash; graze as you wander. <a class="ln" href="https://maps.google.com/?q=Bread+Ahead+Borough+Market+London">Bread Ahead</a> doughnuts, <a class="ln" href="https://maps.google.com/?q=Kappacasein+Borough+Market+London">Kappacasein</a> toasted cheese, <a class="ln" href="https://maps.google.com/?q=Monmouth+Coffee+Borough+London">Monmouth</a> coffee. <a class="ln" href="https://maps.google.com/?q=Southwark+Cathedral+London">Southwark Cathedral</a> next door is a lovely, calm detour.</p>
       <details class="seg pho"><summary class="h">🛍️ For Phoebe <span class="hint">tap</span></summary><ul>
-        <li><b>Bermondsey Street</b> (10-min walk south) &mdash; indie boutiques, the White Cube gallery &amp; lovely little homeware shops.</li>
-        <li>Market makers' stalls &mdash; ceramics, olive wood, spices &amp; artisan treats to take home.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=Bermondsey+Street+London">Bermondsey Street</a></b> (10-min walk south) &mdash; indie boutiques, the <a class="ln" href="https://maps.google.com/?q=White+Cube+Bermondsey+London">White Cube</a> gallery &amp; lovely homeware shops.</li>
+        <li>The market's maker stalls &mdash; ceramics, olive wood, spices &amp; artisan treats to take home.</li>
       </ul></details>
       <details class="seg pub"><summary class="h">🍺 For Dad &amp; Sis <span class="hint">tap</span></summary><ul>
-        <li><b>The Market Porter</b> &mdash; proper old market pub, real ales, been pouring since dawn for the traders.</li>
-        <li><b>The George Inn</b> (Borough High St) &mdash; London's last galleried coaching inn (National Trust); pints in the historic courtyard.</li>
-        <li>Market bites: a <b>Scotch egg</b>, a hot salt-beef roll, or fresh oysters by the river.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=The+Market+Porter+London">The Market Porter</a></b> &mdash; proper old market pub, real ales, pouring since dawn for the traders.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=The+George+Inn+Borough+High+Street+London">The George Inn</a></b> &mdash; London's last galleried coaching inn (National Trust); pints in the historic courtyard.</li>
+        <li>Market bites: a Scotch egg, a hot salt-beef roll, or fresh oysters by the river.</li>
       </ul></details>
       <div class="row"><a class="btn" href="https://maps.google.com/?q=Borough+Market+London">🗺️ Borough Market</a><a class="btn" href="https://maps.google.com/?q=The+Market+Porter+London">🍺 Market Porter</a></div>
     </div>
@@ -113,24 +112,24 @@
     <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/42/Covent_Garden_Interior_May_2006_crop.jpg" alt="Covent Garden">
     <div class="body">
       <div class="time">13:00 · lunch</div>
-      <h2>Covent Garden</h2>
+      <h2><a class="ln" href="https://maps.google.com/?q=Covent+Garden+Piazza+London">Covent Garden</a></h2>
       <p>The Piazza <b>street performers</b> are a hit with Phoebe &amp; Alfie. Lunch &mdash; a few classic London institutions to pick from:</p>
       <ul style="margin:4px 0 2px;padding-left:18px;color:var(--ink2);font-size:15px">
-        <li>⭐ <b>The Delaunay</b> (Aldwych) &mdash; a grand, old-world café-restaurant (Wolseley team); that Rules-era character but <b>all-day &amp; relaxed with the kids</b>. Does everything from schnitzel to a proper afternoon tea.</li>
-        <li><b>J Sheekey</b> (St Martin's Court) &mdash; the <b>1896 theatreland seafood institution</b> (celebrating 130 years) &mdash; wood panelling, actor photos, famous fish pie &amp; oysters.</li>
-        <li><b>Rock &amp; Sole Plaice</b> (Endell St) &mdash; London's <b>oldest chippy (1871)</b>; the casual, kid-easy classic for proper fish &amp; chips.</li>
+        <li>⭐ <b><a class="ln" href="https://maps.google.com/?q=The+Delaunay+Aldwych+London">The Delaunay</a></b> (Aldwych) &mdash; a grand, old-world café-restaurant (Wolseley team); that Rules-era character but <b>all-day &amp; relaxed with the kids</b>.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=J+Sheekey+London">J Sheekey</a></b> (St Martin's Court) &mdash; the <b>1896 theatreland seafood institution</b>; wood panelling, actor photos, famous fish pie &amp; oysters.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=Rock+and+Sole+Plaice+Endell+Street+London">Rock &amp; Sole Plaice</a></b> (Endell St) &mdash; London's <b>oldest chippy (1871)</b>; casual &amp; kid-easy.</li>
       </ul>
-      <p>Gelato at Venchi after.</p>
+      <p>Gelato at <a class="ln" href="https://maps.google.com/?q=Venchi+Covent+Garden+London">Venchi</a> after.</p>
       <details class="seg pho"><summary class="h">🛍️ For Phoebe <span class="hint">tap</span></summary><ul>
-        <li><b>Seven Dials &amp; Neal's Yard</b> &mdash; the prettiest corner: Aesop, Le Labo, Neal's Yard Remedies, indie fashion.</li>
-        <li><b>The Apple Market</b> &mdash; handmade jewellery &amp; craft stalls under the glass roof.</li>
-        <li><b>Charlotte Tilbury</b>, <b>Space NK</b> &amp; <b>Chanel Beauty</b> around the Piazza; the pretty <b>Moomin</b> &amp; <b>Whittard</b> shops too.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=Seven+Dials+London">Seven Dials</a> &amp; <a class="ln" href="https://maps.google.com/?q=Neals+Yard+London">Neal's Yard</a></b> &mdash; the prettiest corner: <a class="ln" href="https://maps.google.com/?q=Aesop+Covent+Garden+London">Aesop</a>, <a class="ln" href="https://maps.google.com/?q=Le+Labo+Covent+Garden+London">Le Labo</a>, <a class="ln" href="https://maps.google.com/?q=Neals+Yard+Remedies+Covent+Garden+London">Neal's Yard Remedies</a>, indie fashion.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=Apple+Market+Covent+Garden+London">The Apple Market</a></b> &mdash; handmade jewellery &amp; craft stalls under the glass roof.</li>
+        <li><a class="ln" href="https://maps.google.com/?q=Charlotte+Tilbury+Covent+Garden+London">Charlotte Tilbury</a>, <a class="ln" href="https://maps.google.com/?q=Space+NK+Covent+Garden+London">Space NK</a> &amp; <a class="ln" href="https://maps.google.com/?q=Chanel+Covent+Garden+London">Chanel Beauty</a> around the Piazza; the pretty <a class="ln" href="https://maps.google.com/?q=Moomin+Shop+Covent+Garden+London">Moomin</a> &amp; <a class="ln" href="https://maps.google.com/?q=Whittard+Covent+Garden+London">Whittard</a> shops too.</li>
       </ul></details>
       <details class="seg pub"><summary class="h">🍺 For Dad &amp; Sis <span class="hint">tap</span></summary><ul>
-        <li><b>The Lamb &amp; Flag</b> (Rose St) &mdash; a gloriously old, wonky Covent Garden pub tucked down an alley.</li>
-        <li><b>The Harp</b> (Chandos Pl) &mdash; multi-award-winning ale house, famous for its sausages.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=The+Lamb+and+Flag+Rose+Street+London">The Lamb &amp; Flag</a></b> (Rose St) &mdash; a gloriously old, wonky pub tucked down an alley.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=The+Harp+Chandos+Place+London">The Harp</a></b> (Chandos Pl) &mdash; multi-award-winning ale house, famous for its sausages.</li>
       </ul></details>
-      <div class="row"><a class="btn" href="https://maps.google.com/?q=The+Delaunay+Aldwych+London">⭐ The Delaunay</a><a class="btn" href="https://maps.google.com/?q=J+Sheekey+London">🍽️ J Sheekey</a><a class="btn" href="https://maps.google.com/?q=Rock+and+Sole+Plaice+Endell+Street+London">🐟 Rock &amp; Sole</a><a class="btn" href="https://maps.google.com/?q=Neals+Yard+London">🛍️ Neal's Yard</a></div>
+      <div class="row"><a class="btn" href="https://maps.google.com/?q=The+Delaunay+Aldwych+London">⭐ The Delaunay</a><a class="btn" href="https://maps.google.com/?q=J+Sheekey+London">🍽️ J Sheekey</a><a class="btn" href="https://maps.google.com/?q=Neals+Yard+London">🛍️ Neal's Yard</a></div>
     </div>
   </div>
 
@@ -140,14 +139,14 @@
     <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Liberty_department_store_London.jpg" alt="Liberty, London">
     <div class="body">
       <div class="time">14:45</div>
-      <h2>Liberty + Carnaby</h2>
-      <p>Liberty is worth it just to wander &mdash; the mock-Tudor building is stunning. Carnaby &amp; Kingly Court next door for more shops, coffee, loos &amp; high chairs.</p>
+      <h2><a class="ln" href="https://maps.google.com/?q=Liberty+London">Liberty</a> + <a class="ln" href="https://maps.google.com/?q=Carnaby+Street+London">Carnaby</a></h2>
+      <p><a class="ln" href="https://maps.google.com/?q=Liberty+London">Liberty</a> is worth it just to wander &mdash; the mock-Tudor building is stunning. <a class="ln" href="https://maps.google.com/?q=Carnaby+Street+London">Carnaby</a> &amp; <a class="ln" href="https://maps.google.com/?q=Kingly+Court+London">Kingly Court</a> next door for more shops, coffee, loos &amp; high chairs.</p>
       <details class="seg pho"><summary class="h">🛍️ For Phoebe <span class="hint">tap</span></summary><ul>
-        <li><b>Liberty Beauty Hall</b> &mdash; the famous one; plus Liberty's signature scarves &amp; fabric prints.</li>
-        <li><b>Carnaby:</b> &amp; Other Stories, COS, Ganni, Jo Malone, Lush, and Kingly Court's little boutiques.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=Liberty+London">Liberty Beauty Hall</a></b> &mdash; the famous one; plus Liberty's signature scarves &amp; fabric prints.</li>
+        <li>Carnaby: <a class="ln" href="https://maps.google.com/?q=Other+Stories+Carnaby+London">&amp; Other Stories</a>, <a class="ln" href="https://maps.google.com/?q=COS+Carnaby+London">COS</a>, <a class="ln" href="https://maps.google.com/?q=Ganni+Carnaby+London">Ganni</a>, <a class="ln" href="https://maps.google.com/?q=Jo+Malone+Carnaby+London">Jo Malone</a>, <a class="ln" href="https://maps.google.com/?q=Lush+Carnaby+London">Lush</a>, and Kingly Court's little boutiques.</li>
       </ul></details>
       <details class="seg pub"><summary class="h">🍺 For Dad &amp; Sis <span class="hint">tap</span></summary><ul>
-        <li><b>BrewDog Soho</b> or a proper Soho boozer &mdash; the <b>Clachan</b> (Kingly St) is a beautiful old Victorian pub right by Liberty.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=The+Clachan+Kingly+Street+London">The Clachan</a></b> (Kingly St) &mdash; a beautiful old Victorian pub right by Liberty. Or <a class="ln" href="https://maps.google.com/?q=BrewDog+Soho+London">BrewDog Soho</a> round the corner.</li>
       </ul></details>
       <div class="row"><a class="btn" href="https://maps.google.com/?q=Liberty+London">🗺️ Liberty</a><a class="btn" href="https://maps.google.com/?q=Carnaby+Street+London">🛍️ Carnaby</a><a class="btn" href="https://maps.google.com/?q=Kingly+Court+London">☕ Kingly Court</a></div>
     </div>
@@ -159,36 +158,36 @@
     <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Camden_markets_entrance.JPG" alt="Camden Market">
     <div class="body">
       <div class="time">16:45</div>
-      <h2>Camden</h2>
-      <p>Buzzing markets, the Lock &amp; the canal. Global street food for a late graze. Calmer with the kids? The canal towpath up to Primrose Hill is beautiful (and great views).</p>
+      <h2><a class="ln" href="https://maps.google.com/?q=Camden+Market+London">Camden</a></h2>
+      <p>Buzzing markets, the <a class="ln" href="https://maps.google.com/?q=Camden+Lock+London">Lock</a> &amp; the canal. Global street food for a late graze. Calmer with the kids? The canal towpath up to <a class="ln" href="https://maps.google.com/?q=Primrose+Hill+London">Primrose Hill</a> is beautiful (great views).</p>
       <details class="seg pho"><summary class="h">🛍️ For Phoebe <span class="hint">tap</span></summary><ul>
-        <li><b>Rokit</b> (Camden High St) &mdash; the best vintage in Camden: <b>four floors</b> of curated designer &amp; vintage (20s&ndash;90s), plus their own reworked pieces.</li>
-        <li><b>Collectif</b> (Camden Market) &mdash; gorgeous <b>40s/50s retro glamour</b>: pin-up dresses &amp; vintage-style womenswear.</li>
-        <li><b>The Vintage Collection</b> (Saddle Row) &mdash; one of the UK's largest unworn-vintage collections, 30s&ndash;90s.</li>
-        <li><b>Camden Market &amp; the Stables</b> &mdash; indie designers, leather, jewellery &amp; one-off finds. (Fun with Alfie: the weird &amp; wonderful <b>Cyberdog</b>.)</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=Rokit+Camden+High+Street+London">Rokit</a></b> &mdash; the best vintage in Camden: <b>four floors</b> of curated designer &amp; vintage (20s&ndash;90s), plus their own reworked pieces.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=Collectif+Camden+Market+London">Collectif</a></b> &mdash; gorgeous <b>40s/50s retro glamour</b>: pin-up dresses &amp; vintage-style womenswear.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=The+Vintage+Collection+Camden+London">The Vintage Collection</a></b> (Saddle Row) &mdash; one of the UK's largest unworn-vintage collections, 30s&ndash;90s.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=Stables+Market+Camden+London">Camden Market &amp; the Stables</a></b> &mdash; indie designers, leather &amp; jewellery. (Fun with Alfie: the weird &amp; wonderful <a class="ln" href="https://maps.google.com/?q=Cyberdog+Camden+London">Cyberdog</a>.)</li>
       </ul></details>
       <details class="seg pub"><summary class="h">🍺 For Dad &amp; Sis <span class="hint">tap</span></summary><ul>
-        <li><b>The Hawley Arms</b> &mdash; the legendary Camden pub (Amy Winehouse's local); great terrace.</li>
-        <li><b>BrewDog Camden</b> or a canal-side pint at <b>The Lock Tavern</b>.</li>
+        <li><b><a class="ln" href="https://maps.google.com/?q=The+Hawley+Arms+Camden+London">The Hawley Arms</a></b> &mdash; the legendary Camden pub (Amy Winehouse's local); great terrace.</li>
+        <li><a class="ln" href="https://maps.google.com/?q=BrewDog+Camden+London">BrewDog Camden</a>, or a canal-side pint at <a class="ln" href="https://maps.google.com/?q=The+Lock+Tavern+Camden+London">The Lock Tavern</a>.</li>
       </ul></details>
-      <div class="row"><a class="btn" href="https://maps.google.com/?q=Camden+Market+London">🗺️ Camden Market</a><a class="btn" href="https://maps.google.com/?q=Rokit+Camden+High+Street+London">🛍️ Rokit</a><a class="btn" href="https://maps.google.com/?q=Collectif+Camden+Market+London">🛍️ Collectif</a><a class="btn" href="https://maps.google.com/?q=The+Hawley+Arms+Camden">🍺 Hawley Arms</a><a class="btn" href="https://maps.google.com/?q=Primrose+Hill+London">🌳 Primrose Hill</a></div>
+      <div class="row"><a class="btn" href="https://maps.google.com/?q=Camden+Market+London">🗺️ Camden Market</a><a class="btn" href="https://maps.google.com/?q=Rokit+Camden+High+Street+London">🛍️ Rokit</a><a class="btn" href="https://maps.google.com/?q=The+Hawley+Arms+Camden">🍺 Hawley Arms</a></div>
     </div>
   </div>
 
-  <!-- A proper British dinner idea -->
+  <!-- A proper British bite -->
   <div class="stop">
     <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Fish_and_chips_blackpool.jpg/1280px-Fish_and_chips_blackpool.jpg" alt="Fish and chips">
     <div class="body">
       <div class="time">before the train</div>
       <h2>A proper British bite 🇬🇧</h2>
-      <p>If dad &amp; sis fancy something classic before Euston: <b>fish &amp; chips</b>, a <b>steak &amp; ale pie</b>, or <b>bangers &amp; mash</b> in a traditional pub. <b>The Faltering Fullback</b> (near the route) and <b>The Poet</b> do proper pub food; or grab chips to eat on the way.</p>
+      <p>If dad &amp; sis fancy something classic near the route/Euston: <b><a class="ln" href="https://maps.google.com/?q=Poppies+Fish+and+Chips+Camden+London">Poppies Camden</a></b> (proper retro fish &amp; chips), or a pint &amp; pie at <b><a class="ln" href="https://maps.google.com/?q=The+Doric+Arch+Euston+London">The Doric Arch</a></b> (a traditional pub right by Euston).</p>
     </div>
   </div>
 
   <div class="end">
     <div class="t" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700">Heading home</div>
     <div class="p">🚆 Dad &amp; Sis — train 19:38</div>
-    <div class="s" style="color:var(--ink2);font-size:14px;margin-top:3px">London Euston → Lichfield (arr 21:19). Camden → Euston is a short hop — plenty of time.</div>
+    <div class="s" style="color:var(--ink2);font-size:14px;margin-top:3px"><a class="ln" href="https://maps.google.com/?q=London+Euston+Station">London Euston</a> → Lichfield (arr 21:19). Camden → Euston is a short hop — plenty of time.</div>
     <div class="row" style="justify-content:center"><a class="btn" href="https://maps.google.com/?q=London+Euston+Station">🗺️ Euston</a></div>
   </div>
 
