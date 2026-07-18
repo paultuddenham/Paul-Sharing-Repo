@@ -42,6 +42,13 @@
   .seg ul{margin:7px 0 0;padding-left:18px}
   .seg li{margin:5px 0;font-size:14px;color:var(--ink2)}
   .seg li b{color:var(--ink)}
+  /* collapsible detail sections (tap to expand — keeps the page short) */
+  details.seg summary{list-style:none;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent}
+  details.seg summary::-webkit-details-marker{display:none}
+  .seg summary.h::after{content:"▾";margin-left:auto;color:var(--muted);font-size:12px;transition:transform .2s}
+  details.seg:not([open]) summary.h::after{transform:rotate(-90deg)}
+  .seg summary.h .hint{font-weight:600;color:var(--muted);font-size:11px;letter-spacing:0;text-transform:none}
+  details.seg[open] summary.h .hint{display:none}
   .segimg{width:100%;height:130px;object-fit:cover;border-radius:10px;margin-top:9px;display:block}
   .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
   .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:10px;border:1px solid var(--edge);color:var(--accent);background:#20242c}
@@ -87,15 +94,15 @@
       <div class="time">11:15</div>
       <h2>Borough Market</h2>
       <p>London's best food market &mdash; graze as you wander. Bread Ahead doughnuts, Kappacasein toasted cheese, Monmouth coffee. Southwark Cathedral next door is a lovely, calm 5-min detour.</p>
-      <div class="seg pho"><div class="h">🛍️ For Phoebe</div><ul>
+      <details class="seg pho"><summary class="h">🛍️ For Phoebe <span class="hint">tap</span></summary><ul>
         <li><b>Bermondsey Street</b> (10-min walk south) &mdash; indie boutiques, the White Cube gallery &amp; lovely little homeware shops.</li>
         <li>Market makers' stalls &mdash; ceramics, olive wood, spices &amp; artisan treats to take home.</li>
-      </ul></div>
-      <div class="seg pub"><div class="h">🍺 For Dad &amp; Sis</div><ul>
+      </ul></details>
+      <details class="seg pub"><summary class="h">🍺 For Dad &amp; Sis <span class="hint">tap</span></summary><ul>
         <li><b>The Market Porter</b> &mdash; proper old market pub, real ales, been pouring since dawn for the traders.</li>
         <li><b>The George Inn</b> (Borough High St) &mdash; London's last galleried coaching inn (National Trust); pints in the historic courtyard.</li>
         <li>Market bites: a <b>Scotch egg</b>, a hot salt-beef roll, or fresh oysters by the river.</li>
-      </ul></div>
+      </ul></details>
       <div class="row"><a class="btn" href="https://maps.google.com/?q=Borough+Market+London">🗺️ Borough Market</a><a class="btn" href="https://maps.google.com/?q=The+Market+Porter+London">🍺 Market Porter</a></div>
     </div>
   </div>
@@ -114,15 +121,15 @@
         <li><b>Rock &amp; Sole Plaice</b> (Endell St) &mdash; London's <b>oldest chippy (1871)</b>; the casual, kid-easy classic for proper fish &amp; chips.</li>
       </ul>
       <p>Gelato at Venchi after.</p>
-      <div class="seg pho"><div class="h">🛍️ For Phoebe</div><ul>
+      <details class="seg pho"><summary class="h">🛍️ For Phoebe <span class="hint">tap</span></summary><ul>
         <li><b>Seven Dials &amp; Neal's Yard</b> &mdash; the prettiest corner: Aesop, Le Labo, Neal's Yard Remedies, indie fashion.</li>
         <li><b>The Apple Market</b> &mdash; handmade jewellery &amp; craft stalls under the glass roof.</li>
         <li><b>Charlotte Tilbury</b>, <b>Space NK</b> &amp; <b>Chanel Beauty</b> around the Piazza; the pretty <b>Moomin</b> &amp; <b>Whittard</b> shops too.</li>
-      </ul></div>
-      <div class="seg pub"><div class="h">🍺 For Dad &amp; Sis</div><ul>
+      </ul></details>
+      <details class="seg pub"><summary class="h">🍺 For Dad &amp; Sis <span class="hint">tap</span></summary><ul>
         <li><b>The Lamb &amp; Flag</b> (Rose St) &mdash; a gloriously old, wonky Covent Garden pub tucked down an alley.</li>
         <li><b>The Harp</b> (Chandos Pl) &mdash; multi-award-winning ale house, famous for its sausages.</li>
-      </ul></div>
+      </ul></details>
       <div class="row"><a class="btn" href="https://maps.google.com/?q=The+Delaunay+Aldwych+London">⭐ The Delaunay</a><a class="btn" href="https://maps.google.com/?q=J+Sheekey+London">🍽️ J Sheekey</a><a class="btn" href="https://maps.google.com/?q=Rock+and+Sole+Plaice+Endell+Street+London">🐟 Rock &amp; Sole</a><a class="btn" href="https://maps.google.com/?q=Neals+Yard+London">🛍️ Neal's Yard</a></div>
     </div>
   </div>
@@ -135,13 +142,13 @@
       <div class="time">14:45</div>
       <h2>Liberty + Carnaby</h2>
       <p>Liberty is worth it just to wander &mdash; the mock-Tudor building is stunning. Carnaby &amp; Kingly Court next door for more shops, coffee, loos &amp; high chairs.</p>
-      <div class="seg pho"><div class="h">🛍️ For Phoebe</div><ul>
+      <details class="seg pho"><summary class="h">🛍️ For Phoebe <span class="hint">tap</span></summary><ul>
         <li><b>Liberty Beauty Hall</b> &mdash; the famous one; plus Liberty's signature scarves &amp; fabric prints.</li>
         <li><b>Carnaby:</b> &amp; Other Stories, COS, Ganni, Jo Malone, Lush, and Kingly Court's little boutiques.</li>
-      </ul></div>
-      <div class="seg pub"><div class="h">🍺 For Dad &amp; Sis</div><ul>
+      </ul></details>
+      <details class="seg pub"><summary class="h">🍺 For Dad &amp; Sis <span class="hint">tap</span></summary><ul>
         <li><b>BrewDog Soho</b> or a proper Soho boozer &mdash; the <b>Clachan</b> (Kingly St) is a beautiful old Victorian pub right by Liberty.</li>
-      </ul></div>
+      </ul></details>
       <div class="row"><a class="btn" href="https://maps.google.com/?q=Liberty+London">🗺️ Liberty</a><a class="btn" href="https://maps.google.com/?q=Carnaby+Street+London">🛍️ Carnaby</a><a class="btn" href="https://maps.google.com/?q=Kingly+Court+London">☕ Kingly Court</a></div>
     </div>
   </div>
@@ -154,16 +161,16 @@
       <div class="time">16:45</div>
       <h2>Camden</h2>
       <p>Buzzing markets, the Lock &amp; the canal. Global street food for a late graze. Calmer with the kids? The canal towpath up to Primrose Hill is beautiful (and great views).</p>
-      <div class="seg pho"><div class="h">🛍️ For Phoebe</div><ul>
+      <details class="seg pho"><summary class="h">🛍️ For Phoebe <span class="hint">tap</span></summary><ul>
         <li><b>Rokit</b> (Camden High St) &mdash; the best vintage in Camden: <b>four floors</b> of curated designer &amp; vintage (20s&ndash;90s), plus their own reworked pieces.</li>
         <li><b>Collectif</b> (Camden Market) &mdash; gorgeous <b>40s/50s retro glamour</b>: pin-up dresses &amp; vintage-style womenswear.</li>
         <li><b>The Vintage Collection</b> (Saddle Row) &mdash; one of the UK's largest unworn-vintage collections, 30s&ndash;90s.</li>
         <li><b>Camden Market &amp; the Stables</b> &mdash; indie designers, leather, jewellery &amp; one-off finds. (Fun with Alfie: the weird &amp; wonderful <b>Cyberdog</b>.)</li>
-      </ul></div>
-      <div class="seg pub"><div class="h">🍺 For Dad &amp; Sis</div><ul>
+      </ul></details>
+      <details class="seg pub"><summary class="h">🍺 For Dad &amp; Sis <span class="hint">tap</span></summary><ul>
         <li><b>The Hawley Arms</b> &mdash; the legendary Camden pub (Amy Winehouse's local); great terrace.</li>
         <li><b>BrewDog Camden</b> or a canal-side pint at <b>The Lock Tavern</b>.</li>
-      </ul></div>
+      </ul></details>
       <div class="row"><a class="btn" href="https://maps.google.com/?q=Camden+Market+London">🗺️ Camden Market</a><a class="btn" href="https://maps.google.com/?q=Rokit+Camden+High+Street+London">🛍️ Rokit</a><a class="btn" href="https://maps.google.com/?q=Collectif+Camden+Market+London">🛍️ Collectif</a><a class="btn" href="https://maps.google.com/?q=The+Hawley+Arms+Camden">🍺 Hawley Arms</a><a class="btn" href="https://maps.google.com/?q=Primrose+Hill+London">🌳 Primrose Hill</a></div>
     </div>
   </div>
